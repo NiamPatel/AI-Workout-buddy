@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Workout Buddy</title>
+    <style>
+        body {
+            background-image: url("/static/back.jpg");
+            background-size: cover;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+            background-color: orange;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .textbox {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            resize: none;
+            background-color: rgb(150, 150, 150);
+            font-size: 24px;
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 64px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">AIWorkout Buddy</h1>
+
+    <table>
+        <tr>
+            <td><img src="501260.png" alt="501260.png" style="width: 300px; height: auto;"><br><button onclick="buttonPressed('button1')">Pushups</button></td>
+            <td><img src="situp.png" alt="situp.png" style="width: 200px; height: auto;"><br><button onclick="buttonPressed('button2')">Situps</button></td>
+            <td><img src="squat.png" alt="squat.png" style="width: 100px; height: auto;"><br><button onclick="buttonPressed('button3')">Squats</button></td>
+        </tr>
+        <tr>
+            <td><img src="plank.png" alt="plank.png" style="width: 420px; height: auto;"><br><button onclick="buttonPressed('button4')">Plank</button></td>
+            <td><img src="lunge.jpg" alt="lunge.jpg" style="width: 190px; height: auto;"><br><button onclick="buttonPressed('button4')">lunge</button></td>
+            <td><img src="b.png" alt="b.png" style="width: 200px; height: auto;"><br><button onclick="buttonPressed('button4')">biceps curls</button></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <textarea class="textbox" readonly>{{ button_states }}</textarea>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function buttonPressed(buttonId) {
+            window.location.href = '/button_pressed/' + buttonId;
+        }
+    </script>
+</body>
+</html>
